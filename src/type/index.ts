@@ -44,8 +44,4 @@ type RawHykeCoveredAreasData = RawHykeCoveredAreaData[];
 // data scheme of black-spots.data-item file
 type RawHykeBlackSpotsData = RawHykeBlackSpotDataItem[];
 
-export type {
-  RawHykeCoveredAreasData,
-  RawHykeBlackSpotsData,
-  GoogleMapLatLng,
-}
+export type { RawHykeCoveredAreasData, RawHykeBlackSpotsData, GoogleMapLatLng };

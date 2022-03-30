@@ -9,24 +9,6 @@ import coveredAreaData from "./config/covered_area.json";
 import spotData from "./config/spot_data.json";
 
 const App = () => {
-  /**
-   * Set polygon strokes on map
-   * @param map Google Maps internal API object
-   */
-  const handledApiLoaded = (map: any, maps: any) => {
-    const polygons = renderPolygon(coveredAreaData);
-    //set color style
-    map.data.setStyle({
-      strokeColor: colors.coverArea,
-      fillColor: "transparent",
-    });
-
-    //set strokes for covered area
-    map.data.add({
-      geometry: new maps.Data.Polygon(polygons),
-    });
-  };
-
   return (
     <div className="App">
       <div style={{ height: "100vh", width: "100%" }}>
@@ -71,6 +53,24 @@ const renderPolygon = (coveredAreaData: RawHykeCoveredAreasData) => {
         } as GoogleMapLatLng)
     )
   );
+};
+
+/**
+ * Set polygon strokes on map
+ * @param map Google Maps internal API object
+ */
+const handledApiLoaded = (map: any, maps: any) => {
+  const polygons = renderPolygon(coveredAreaData);
+  //set color style
+  map.data.setStyle({
+    strokeColor: colors.coverArea,
+    fillColor: "transparent",
+  });
+
+  //set strokes for covered area
+  map.data.add({
+    geometry: new maps.Data.Polygon(polygons),
+  });
 };
 
 export default App;
