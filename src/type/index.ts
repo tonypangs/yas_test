@@ -7,6 +7,10 @@ interface LatLng {
   latitude: number;
   longitude: number;
 }
+interface GoogleMapLatLng {
+  lat: number;
+  lng: number;
+}
 
 interface Circle {
   radius: number; // in meters
@@ -19,7 +23,7 @@ type Ring = LatLng[];
 // A polygon consists of one outer ring, and may contains multiple inner rings.
 // ref: https://datatracker.ietf.org/doc/html/rfc7946#appendix-A.3
 interface Polygon {
-  outerRing: Ring;
+  outerRing: Ring; //Ring[]?
   innerRings: Ring[];
 }
 
@@ -43,4 +47,5 @@ type RawHykeBlackSpotsData = RawHykeBlackSpotDataItem[];
 export type {
   RawHykeCoveredAreasData,
   RawHykeBlackSpotsData,
+  GoogleMapLatLng,
 }
